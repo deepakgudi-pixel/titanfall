@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 html,
 body,
 #root {
@@ -9,9 +11,13 @@ body,
   overflow: hidden;
 }
 
+*::-webkit-scrollbar{
+  display: none;
+}
+
 body {
   margin: 0;
-  font-family: monospace;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #cdcbca;
@@ -48,7 +54,6 @@ h2 {
     #cdcbca,
     aliceblue,
     #cdcbca,
-    #2a3a3f
   );
   background-size: auto;
   background-clip: border-box;
@@ -75,9 +80,19 @@ button {
   color: #fff;
   padding: 14px 40px;
   border-radius: 3px;
+  transition: all 0.5s;
+
+  &:hover{
+    background: white;
+    color: #2a3a3f;
+  }
+
 }
+
 
 .row {
   width: 100%;
   padding: 0 40px;
 }
+
+
