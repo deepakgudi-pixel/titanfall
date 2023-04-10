@@ -1,4 +1,3 @@
-import React, { useRef } from "react";
 import {
   Cloud,
   Environment,
@@ -10,13 +9,26 @@ import {
 
 import { Riot } from "./components/Riot";
 
+import baffle from "baffle";
+import { useEffect } from "react";
+
 export default function App() {
+  useEffect(() => {
+    const target = baffle(".title");
+    target.set({
+      characters: 'wallrideheadshotsrespwanmilitia',
+      speed: "100",
+    });
+    target.start();
+    target.reveal(1000, 1000);
+  });
+
   return (
     <>
       <color attach="background" args={["#333333"]} />
       <OrbitControls
-        enableZoom={false}
         enablePan={false}
+        enableZoom={false}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
       />
