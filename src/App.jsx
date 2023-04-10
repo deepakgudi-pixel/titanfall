@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import {
   Cloud,
   Environment,
+  OrbitControls,
   Scroll,
   ScrollControls,
   Sparkles,
@@ -13,6 +14,12 @@ export default function App() {
   return (
     <>
       <color attach="background" args={["#333333"]} />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+      />
       <ambientLight intensity={0.2} />
       <spotLight
         position={[0, 25, 0]}
@@ -26,9 +33,12 @@ export default function App() {
       <ScrollControls pages={6} damping={0.1}>
         {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
         <Riot scale={0.3} position={[0, -2.8, 0]} />
-        <Cloud size={2} color={"#FFA559"} scale={[10, 10, 10]} />
+
         <Sparkles size={2} color={"#fff"} scale={[10, 10, 10]} />
-        <Scroll>{/* Canvas contents in here will scroll along */}</Scroll>
+        <Scroll>
+          {/* Canvas contents in here will scroll along */}
+          <Cloud size={2} color={"#FFA559"} scale={[10, 10, 10]} />
+        </Scroll>
         <Scroll html style={{ width: "100%" }}>
           {/* DOM contents in here will scroll along */}
           <h1
