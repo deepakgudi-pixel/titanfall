@@ -41,7 +41,7 @@ export default function App() {
         intensity={2}
         shadow-bias={-0.0001}
       />
-      <Environment preset="warehouse" />
+    
       <ScrollControls pages={6} damping={0.1}>
         {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
         <Riot scale={0.3} position={[0, -2.8, 0]} />

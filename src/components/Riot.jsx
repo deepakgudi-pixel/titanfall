@@ -12,8 +12,6 @@ import { useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
 
-
-
 export function Riot(props) {
   const { nodes, materials } = useGLTF(
     "./models/riot_mech_model-transformed.glb"
@@ -23,9 +21,9 @@ export function Riot(props) {
   const scroll = useScroll();
   const tl = useRef();
 
-  useFrame((state, delta)=>{
-    tl.current.seek(scroll.offset * tl.current.duration())
-  })
+  useFrame((state, delta) => {
+    tl.current.seek(scroll.offset * tl.current.duration());
+  });
 
   useLayoutEffect(() => {
     tl.current = gsap.timeline({
@@ -38,7 +36,6 @@ export function Riot(props) {
 
       .to(mech.current.rotation, { y: 1 }, 6)
       .to(mech.current.position, { x: -1 }, 6)
-     
 
       .to(mech.current.rotation, { y: 3 }, 11)
       .to(mech.current.rotation, { x: 0 }, 11)
